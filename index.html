@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sulthon Shop</title>
+    <link
+      rel="icon"
+      href="assets/icons/ic_sulthon_shop_logo.svg"
+      type="image/svg+xml"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-header">
+          <p class="brand">Sulthon Shop</p>
+          <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#products">Produk dan Layanan</a></li>
+          <li><a href="#testimonials">Testimoni</a></li>
+          <li><a href="#contact">Hubungi Kami</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <aside>
+          <img
+            src="assets/images/iv_sulthon_shop_illustration.svg"
+            alt="Sulthon Shop Illustration"
+            width="600"
+          />
+        </aside>
+
+        <article>
+          <div class="shop-tagline">
+            <img
+              src="assets/images/iv_sulthon_shop_tagline.svg"
+              alt="Sulthon Shop Tagline Illustration"
+              width="100"
+            />
+            <h2 id="typing-text"></h2>
+          </div>
+          <div class="shop-info">
+            <p>
+              Toko Sulthon hadir untuk memenuhi kebutuhan harian Anda—mulai dari
+              <b>air minum segar</b> hingga <b>gas LPG terpercaya</b>. Layanan
+              cepat, produk berkualitas, dan senyum pelanggan adalah prioritas
+              kami!
+            </p>
+            <div class="shop-info-card-wrapper">
+              <div class="shop-info-card-content">
+                <div class="shop-info-card-detail-content">
+                  <img
+                    src="assets/icons/ic_location.svg"
+                    alt="Icon Location"
+                    width="24"
+                  />
+                  <p class="shop-info-title">Lokasi</p>
+                </div>
+                <p class="shop-info-desc">DKI Jakarta, Indonesia</p>
+              </div>
+              <div class="vertical-divider"></div>
+              <div class="shop-info-card-content">
+                <div class="shop-info-card-detail-content">
+                  <img
+                    src="assets/icons/ic_operational_time.svg"
+                    alt="Icon Operational Time"
+                    width="24"
+                  />
+                  <p class="shop-info-title">Waktu Operasional</p>
+                </div>
+                <p class="shop-info-desc">08.00 s.d. 17.30 WIB</p>
+              </div>
+            </div>
+            <button class="btn-order-now">Pesan Sekarang</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="products">
+        <article>
+          <p class="section-title">Produk dan Layanan Kami</p>
+          <p class="section-desc">
+            Kami adalah mitra terpercaya untuk kebutuhan air dan gas Anda setiap
+            hari. Dengan layanan yang praktis dan pengiriman yang sigap, Toko
+            Sulthon selalu siap menemani aktivitas rumah tangga Anda tanpa
+            repot!
+          </p>
+          <div class="product-content-wrapper" id="product-list"></div>
+        </article>
+      </section>
+
+      <section id="testimonials">
+        <article>
+          <p class="section-title">Testimoni Pelanggan Kami</p>
+          <p class="section-desc">
+            Kepuasan Anda adalah prioritas kami! Simak cerita dan pengalaman
+            pelanggan setia Toko Sulthon yang telah merasakan layanan cepat,
+            produk berkualitas, dan pengantaran tepat waktu dari kami.
+          </p>
+          <div class="testimonial-grid" id="testimonial-list"></div>
+
+          <div class="pagination">
+            <button id="prevPage" class="btn-page">
+              <img
+                src="assets/icons/ic_chevron_left.svg"
+                alt="Icon Chevron Left"
+                width="24"
+              />
+            </button>
+            <div class="pagination-text">
+              <p id="currentPage" class="current-page-text">1</p>
+              <p>of</p>
+              <p id="totalPages" class="total-pages-text">2</p>
+            </div>
+            <button id="nextPage" class="btn-page">
+              <img
+                src="assets/icons/ic_chevron_right.svg"
+                alt="Icon Chevron Right"
+                width="24"
+              />
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section id="contact">
+        <article>
+          <p class="section-title">Hubungi Kami</p>
+          <div class="store-info-section">
+            <div class="store-info-left">
+              <div class="store-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.433143682074!2d106.77064107581464!3d-6.206456993781385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f762d71f5383%3A0x9e715f565fb3c9fd!2sToko%20Sulton%20(Gas%2CAmidis%20Dan%20Aqua)!5e0!3m2!1sen!2sid!4v1751439756619!5m2!1sen!2sid"
+                  style="
+                    border: 0;
+                    border-radius: 20px;
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 16/9;
+                  "
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+
+              <div class="store-images">
+                <img
+                  src="assets/images/iv_shop_preview_01.png"
+                  alt="Shop Preview 1"
+                />
+                <img
+                  src="assets/images/iv_shop_preview_02.png"
+                  alt="Shop Preview 2"
+                />
+                <img
+                  src="assets/images/iv_shop_preview_03.png"
+                  alt="Shop Preview 3"
+                />
+              </div>
+            </div>
+
+            <div class="store-info-right">
+              <div class="store-detail">
+                <div class="store-detail-wrapper">
+                  <h3>Lokasi</h3>
+                  <p>
+                    Jl. Daud Raya No.16 Ab, RT.2/RW.8, Sukabumi Utara, Kec. Kb.
+                    Jeruk,<br />Kota Jakarta Barat, Daerah Khusus Ibukota
+                    Jakarta 11540
+                  </p>
+                </div>
+                <div class="store-detail-wrapper">
+                  <h3>Waktu Operasional</h3>
+                  <p>08:00 s.d. 17.30 WIB</p>
+                </div>
+                <div class="store-detail-wrapper">
+                  <h3>Kontak</h3>
+                  <p>+6282111156037</p>
+                </div>
+              </div>
+              <a href="https://wa.me/6282111156037" class="cta-button">
+                <img
+                  src="assets/icons/ic_call.svg"
+                  alt="Call Icon"
+                  width="20"
+                />
+                Hubungi Kami Sekarang
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Copyright &copy; 2025 Sulthon Shop by <b>adhibuchori</b>. All Rights
+        Reserved
+      </p>
+    </footer>
+
+    <script type="module" src="scripts/script.js"></script>
+  </body>
+</html>
