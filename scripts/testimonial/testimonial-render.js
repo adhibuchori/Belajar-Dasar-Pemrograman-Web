@@ -50,7 +50,7 @@ export function renderTestimonials() {
             <p class="testimonial-rating-text">${item.rating}</p>
             <div class="testimonial-rating">${stars}</div>
           </div>
-          <div class="testimonial-quote">❝</div>
+          <img src="assets/icons/ic_quote.svg" alt="Icon Testimonial Quote" width="36" height="36">
         </div>
         <div class="testimonial-info">
           <img src="${item.image}" alt="${item.name}" />

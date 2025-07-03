@@ -18,6 +18,7 @@ html {
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   user-select: none;
+  overscroll-behavior: none;
   -webkit-user-select: none;
   -ms-user-select: none;
   cursor: default;
@@ -117,11 +118,11 @@ section#home {
   margin-top: 48px;
 }
 
-.shop-info p {
+.shop-info-content-text,
+.shop-info-desc {
   font-weight: 400;
   line-height: 200%;
   font-size: 20px;
-  max-width: 700px;
 }
 
 .shop-info-card-wrapper {
@@ -166,18 +167,21 @@ section#home {
 }
 
 .btn-order-now {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 400;
   padding: 24px 48px;
   background-color: var(--primary);
   color: white;
   border: none;
   border-radius: 100px;
-  font-weight: 400;
   text-decoration: none;
   transition: background-color 0.3s ease;
   cursor: pointer;
+  height: 72px;
 }
 
 .btn-order-now:hover {
@@ -256,7 +260,6 @@ section#products {
 .product-desc {
   line-height: 200%;
   text-align: center;
-  max-width: 250px;
   font-size: 18px;
 }
 
@@ -315,11 +318,6 @@ section#testimonials {
 .testimonial-rating {
   display: flex;
   align-items: center;
-}
-
-.testimonial-quote {
-  font-size: 20px;
-  color: #3f86ee;
 }
 
 .testimonial-info {
@@ -430,7 +428,7 @@ section#contact {
 
 .store-images img {
   width: 250px;
-  height: 150px;
+  aspect-ratio: 1.8 / 1;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -471,17 +469,18 @@ section#contact {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  align-items: center;
   justify-content: center;
   margin-top: 56px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 400;
   padding: 24px 48px;
   background-color: var(--primary);
   color: white;
   border: none;
   border-radius: 100px;
-  font-weight: 400;
   text-decoration: none;
+  height: 72px;
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
@@ -497,147 +496,7 @@ footer {
   color: white;
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-  nav {
-    flex-direction: column;
-    padding: 16px;
-    gap: 16px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  section,
-  .product-content-wrapper,
-  .shop-info-card-wrapper,
-  .store-info-section {
-    flex-direction: column;
-    gap: 32px;
-    padding: 24px 16px;
-  }
-
-  .shop-tagline {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .shop-tagline h2 {
-    font-size: 32px;
-    min-height: auto;
-    text-align: center;
-  }
-
-  .shop-info p,
-  .section-desc,
-  .product-desc {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .product-card-container {
-    padding: 48px 24px;
-  }
-
-  .testimonial-card {
-    width: 100%;
-  }
-
-  .store-info-right {
-    width: 100%;
-  }
-
-  .store-images {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .store-images img {
-    width: 100%;
-    height: auto;
-  }
-
-  .btn-order-now,
-  .cta-button {
-    font-size: 16px;
-    padding: 16px 24px;
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-}
-
-/* Tablet */
-@media (min-width: 481px) and (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    padding: 24px;
-    gap: 24px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  section,
-  .product-content-wrapper,
-  .shop-info-card-wrapper,
-  .store-info-section {
-    flex-direction: column;
-    gap: 48px;
-    padding: 32px 24px;
-  }
-
-  .shop-tagline {
-    flex-direction: column;
-    gap: 24px;
-    text-align: center;
-  }
-
-  .shop-tagline h2 {
-    font-size: 40px;
-  }
-
-  .shop-info p,
-  .section-desc,
-  .product-desc {
-    font-size: 18px;
-    text-align: center;
-  }
-
-  .product-card-container {
-    padding: 56px 32px;
-  }
-
-  .testimonial-card {
-    width: 100%;
-  }
-
-  .store-info-right {
-    width: 100%;
-  }
-
-  .store-images img {
-    width: 100%;
-    height: auto;
-  }
-
-  .btn-order-now,
-  .cta-button {
-    font-size: 18px;
-    padding: 20px 32px;
-  }
-
-  .section-title {
-    font-size: 28px;
-  }
-}
-
-/* Hide nav links on mobile & tablet */
+/* Hide nav links on mobile and tablet */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -649,7 +508,6 @@ footer {
     right: 0;
     background-color: white;
     padding: 24px 32px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     z-index: 999;
   }
 
@@ -680,7 +538,7 @@ footer {
   }
 }
 
-/* Show nav links & hide menu-toggle on desktop */
+/* Show nav links and hide menu-toggle on desktop */
 @media (min-width: 769px) {
   .menu-toggle {
     display: none;
@@ -696,49 +554,448 @@ footer {
   }
 }
 
-/* Small Laptop */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Mobile */
+@media (max-width: 540px) {
+  /* Mobile: Nav */
   nav {
-    padding: 24px 32px;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
   }
 
-  section,
-  .product-content-wrapper,
-  .shop-info-card-wrapper,
-  .store-info-section {
-    padding: 32px;
-    gap: 64px;
+  nav ul {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Mobile: Section */
+  section#home,
+  section#testimonials {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .section-desc {
+    text-align: center;
+    font-size: 16px;
+    padding: 0 32px;
+  }
+
+  article {
+    width: 100%;
+  }
+
+  /* Mobile: Section Home */
+  .home-illustration {
+    width: 320px;
+    height: auto;
+  }
+
+  .shop-tagline {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .shop-tagline img {
+    width: 56px;
   }
 
   .shop-tagline h2 {
-    font-size: 48px;
+    font-size: 24px;
+    max-width: 240px;
+    min-height: auto;
   }
 
-  .shop-info p,
-  .section-desc,
+  .shop-info {
+    margin-top: 24px;
+  }
+
+  .shop-info-content-text {
+    text-align: center;
+    font-size: 16px;
+    padding: 0px 24px;
+  }
+
+  .shop-info-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 24px auto;
+    width: 100%;
+    gap: 24px;
+  }
+
+  .shop-info-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .shop-info-title {
+    font-size: 14px;
+  }
+
+  .shop-info-desc {
+    font-size: 16px;
+  }
+
+  .vertical-divider {
+    height: 1px;
+    width: auto;
+    background-color: var(--border);
+  }
+
+  .btn-order-now {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height: 56px;
+  }
+
+  /* Mobile: Section Products */
+  section#products {
+    display: flex;
+    padding: 16px 0;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    gap: 24px;
+  }
+
+  .product-content-wrapper {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    padding: 40px;
+    background-color: var(--primary-light);
+    margin-top: 24px;
+  }
+
+  .product-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+  }
+
   .product-desc {
-    font-size: 18px;
+    line-height: 200%;
+    text-align: center;
+    font-size: 16px;
   }
 
-  .product-card-container {
-    padding: 64px 40px;
+  /* Mobile: Section Testimonials */
+  .testimonial-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+    padding: 0px 16px;
+    width: auto;
   }
 
   .testimonial-card {
+    width: auto;
+    padding: 24px;
+  }
+
+  .testimonial-name {
+    font-size: 18px;
+  }
+
+  .pagination {
+    margin-top: 32px;
+  }
+
+  /* Mobile: Section Contact Us */
+  section#contact {
+    display: flex;
+    padding: 16px 0px;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .store-info-section {
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    gap: 24px;
+  }
+
+  .store-info-left {
     width: 100%;
+    background-color: var(--primary-light);
+    padding: 32px;
+    border-radius: 20px;
+  }
+
+  .store-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 32px;
   }
 
   .store-info-right {
     width: 100%;
   }
 
-  .btn-order-now,
-  .cta-button {
-    font-size: 20px;
-    padding: 20px 40px;
+  .store-detail {
+    gap: 24px;
   }
 
+  .store-detail h3 {
+    font-size: 18px;
+    color: black;
+  }
+
+  .store-detail p {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .cta-button {
+    width: 100%;
+    align-items: center;
+    font-size: 16px;
+    height: 56px;
+    margin-top: 24px;
+  }
+
+  footer {
+    padding: 16px;
+  }
+
+  .footer-text {
+    font-size: 10px;
+  }
+}
+
+/* iPad */
+@media (min-width: 550px) and (max-width: 1400px) {
+  /* iPad Section */
   .section-title {
     font-size: 30px;
+    margin-bottom: 16px;
+  }
+  .section-desc {
+    text-align: center;
+    font-size: 20px;
+    max-width: auto;
+    padding: 0 32px;
+  }
+
+  article {
+    width: 100%;
+  }
+
+  /* iPad: Section Home */
+  section#home,
+  section#testimonials {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .home-illustration {
+    width: 400px;
+    height: auto;
+  }
+
+  .shop-tagline {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .shop-tagline img {
+    width: 72px;
+  }
+
+  .shop-tagline h2 {
+    font-size: 48px;
+    max-width: 480px;
+    min-height: 160px;
+  }
+
+  .shop-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  .shop-info-content-text {
+    text-align: center;
+    font-size: 20px;
+    padding: 0px 24px;
+  }
+
+  .shop-info-card-wrapper {
+    margin: 24px auto;
+  }
+
+  .shop-info-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-order-now {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    height: 56px;
+  }
+
+  /* iPad: Section Products */
+  section#products {
+    display: flex;
+    padding: 16px 0;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    gap: 24px;
+  }
+
+  .product-content-wrapper {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    padding: 40px;
+    background-color: var(--primary-light);
+    margin-top: 24px;
+  }
+
+  .product-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  .product-desc {
+    line-height: 200%;
+    text-align: center;
+    font-size: 20px;
+  }
+
+  /* iPad: Section Testimonials */
+  .testimonial-grid {
+    display: grid;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+    padding: 0px 32px;
+    width: auto;
+  }
+
+  .testimonial-card {
+    width: auto;
+    padding: 24px;
+  }
+
+  .testimonial-name {
+    font-size: 18px;
+  }
+
+  .pagination {
+    margin-top: 32px;
+  }
+
+  /* iPad: Section Contact Us */
+  section#contact {
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .store-info-section {
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    gap: 24px;
+  }
+
+  .store-info-left {
+    width: 100%;
+    background-color: var(--primary-light);
+    padding: 32px;
+    border-radius: 20px;
+  }
+
+  .store-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .store-images img {
+    width: 30%;
+    aspect-ratio: 1.8 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .store-info-right {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  .store-detail {
+    gap: 24px;
+  }
+
+  .store-detail h3 {
+    font-size: 18px;
+    color: black;
+  }
+
+  .store-detail p {
+    font-size: 16px;
+    text-align: justify;
+  }
+
+  .cta-button {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    font-size: 16px;
+    height: 56px;
+    margin-top: 24px;
   }
 }
